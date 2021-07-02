@@ -1,1 +1,6 @@
 theme: jekyll-theme-cayman
+title: CEDA Developer Blog
+description: Informal publications about current projects and activites. Projects here may be experimental and unfinished.
+
+plugins:
+  - jekyll-feed
