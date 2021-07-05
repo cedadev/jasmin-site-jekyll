@@ -1,0 +1,19 @@
+.bio-thumbnail {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+.thumbnail-circular {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.bio-title {
+    margin-bottom: auto!important;
+}
+
+.bio-description {
+}

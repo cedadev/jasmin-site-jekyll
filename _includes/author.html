@@ -1,0 +1,10 @@
+{% assign author = site.data.authors | where: "name", {{ page.author}} | first %}
+
+<h2 id="author">Author</h2>
+<div class="bio">
+    <img class="bio-thumbnail thumbnail-circular" src="{{ author.image }}">
+    <h3 class="bio-title">{{ author.name }} - <em>{{ author.position }}</em>
+    </h3>
+
+    <p class="bio-description"><em>{{ author.bio }}</em></p>
+</div>
