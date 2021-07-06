@@ -223,6 +223,14 @@ tools as a base. The STAC specification is evolving fast and so are the tools ar
 has necessarily required pushing improvements to upstream projects. Most of the changes have been to make progress in aligning more fully
 with the current specification or refactoring to aide in extending the code base.
 
+One major piece of the puzzle, not discussed so far, is how to deal with the different vocabularies between domains and 
+dataset collections. We would like to get to the point where each facet or properties attribute of an indexed STAC Item has 
+been verified by a vocabulary server to find linked terms from other namespaces. The CCI Opensearch indexing process verifies the terms
+with a vocabulary server using triple stores to expand the terms extracted from the data files.
+
+It would also be interesting to us to be able to use this approach on STAC server side as well, where user queries could be passed
+through the same process to enable cross domain searching.
+
 # Conclusion
 
 We are hoping to solve our own challenges surrounding search and discovery of data and provide a framework which could be
