@@ -1,0 +1,4 @@
+- name: Richard Smith
+  position: Senior Software Engineer
+  image: https://www.ceda.ac.uk/media/uploads/persons/staff_images/.thumbnails/richard.jpg/richard-90x90.jpg
+  bio: Richard joined CEDA through the graduate scheme following a degree in Meteorology and Climate Science and develops web interfaces to improve discoverability and searchability of the data holdings at CEDA. He specifies in building and maintaining an Elasticsearch cluster with indices used to provide data to CEDA services.
