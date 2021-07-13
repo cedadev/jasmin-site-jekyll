@@ -10,3 +10,4 @@ gem "jekyll"
 gem "jekyll-theme-cayman"
 gem "kramdown-parser-gfm"
 gem "webrick"
+gem 'jekyll-feed'
