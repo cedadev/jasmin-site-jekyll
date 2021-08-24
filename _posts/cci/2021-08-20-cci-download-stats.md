@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "CCI download stats and filter"
+title:  "What is a user? Removing anomalous behaviour from Anonymous access logs."
 author: Mahir Rahman
 date:   2021-08-20 17:00:00
-tags: CCI
+tags: CCI, download stats
 ---
 
-The CCI download stats is the data of accesses by users on the CCI datasets. 
-This project consisted of trying to filter out anomalous peaks caused by higher than usual activity accessing the datasets using a scientific method to analyse and remove said anomalous data.
+The Climate Change Initiative (CCI) [project's goal](https://climate.esa.int/en/esa-climate/esa-cci/Objective/) is to provide open, registration free, 
+access to essential climate variables (ECVs). Dataset usage is an important metric in understanding uptake and usage if the different datasets however,
+without requiring users to register, it is difficult to determine distinct users. Recent changes in access patterns have led to spurious user counts when
+thinking 1 IP = 1 USER. This article looks at methods to determine "normal" thresholds to reduce the impact of the different access patterns on our usage statistics.
 
 # Index
 
@@ -18,59 +20,100 @@ This project consisted of trying to filter out anomalous peaks caused by higher 
 
 # Background
 
-CCI stands for the Climate Change Initiative, and the CCI download stats is the collection of data about accesses to the CCI datasets whereby information about users, country, method of access, date and dataset being accessed is recorded.
+Download and access stats for the CCI Open Data Portal (ODP) is important to track which data is being used and report back to 
+both the scientists producing the data and the funding bodies who comission the data and storage. It allows us to see 
+trends and inform decisions about promotional activities, but counting users from anonymous logs is difficult.
 
-Context to this project lies on the anomalous accesses that occurs on certain datasets. This is a spike in users accessing a dataset that would bloat the statistic charts for CCI by a disproportionate amount. 
-One theory is that a user is using a torrent to access the dataset therefore they are spreading themselves over hundreds, sometimes thousands of IPs.
+There are multiple, legitimate uses of the data but not all count towards usage statistics. One obvious usage which should
+be removed for reporting is usage stats generated through development activity of downstream projects. The CCI ODP is used
+by multiple projects as part of the CCI Knowledge Exchange project. This, in itself, presents a challenge as users often have
+dynamic IPs and IP ranges can filter out non-development usage.
 
-This spamming of accesses can be represented by a pie-chart of the users by country breakdown where 96% of accesses are coming from China. This is of course not accurate due to possible torrent usage thus needs to be filtered out.
+The other challenge is different access patterns. Traditionally, users use a single machine to download data. This may present itself as a number
+of IPs (due to dynamic IP assignment) but change infrequently. One access pattern we have seen in the last year is a large number of IP adresses 
+accessing the same dataset within a single day or two, by one download method. Looking at the usage and the metadata in the logs, it is likely
+(not possible to know without registered user data) that this is a single user using a novel access pattern, possibly torrent. This access
+pattern artificially bloats the number of users.
+
+**insert graph showing anomalous access pattern**
+
+Historically, at CEDA, [we have used the pattern of registered users and applied it to unregistered user](need_link_from_graham). 
+As all access is un-registered, we don't have any point of reference in this case.
+
+Wanting to remove these anomalous peaks in user activity, we took to eyeballing the data and came up with a number: 10. It looked that there 
+were very few occasions where the number of users exceeded 10/dataset/download method/day. This "worked" but we wanted to review this and
+generate a threshold through more statistical means.
+
+The access patterns seem to come from China, but this approach should filter out any other similar activity
 
 # Filtering
 
-When it came  to taking out these spikes, the former method would dismiss and records where the sum of unique users accessing a dataset from one country with one method per day exceeded 10. This value, 10, was hardcoded into the filter and was an eye-ball number picked from analysing the data.
-There was no mathematic backing to the number 10, even if it was a fitting value that would seperate out the spikes in accesses.
-
-Various methods were thought about to come up with a filtering; machine learning, statistical analysis, heuristics.
-The method which was chosen was to use standard deviation using statistical analysis.
+We thought about different options for filtering; machine learning, statistical analysis, heuristics.
+We chose to investigate using standard deviation using statistical analysis.
 
 This would be calculated by using the formula: *t* = *m* + 1.5 * $\sigma$,
-where t is the threshold, m is the mean, 1.5 is the upper bound and $\sigma$ is the standard deviation. In theory if a value is above this statistical upper threshold then that value can be classified as an anomaly and filtered out.
+where t is the threshold, m is the mean, 1.5 is the upper bound and $\sigma$ is the standard deviation. 
+In theory if a value is above this statistical upper threshold then that value can be classified as an anomaly and filtered out.
 
-The first attempt at the filter would be calculate the *t* value per month however this would be misclassify if a month had no spikes in access. This would result in a *t* value around 1, which would dismiss valid data.
+One challenge in this analysis is the sheer number of log messages to process. ~50 million/year. In order to cope with this and
+develop the approach, we started small and scaled up.
 
-Next option was to calculate the *t* value over a larger period of time, in this instance it was calculated for the year 2021 which would result in a value of 92.4.
+The first attempt at the filter calculated the *t* value per month however this would be misclassify if a month had no spikes in access. 
+This would result in a *t* value around 1, which would dismiss valid data.
+
+Running the analysis over a whole year, 2021, we generated a *t* value of 92.4.
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/unfiltered_vs_filtered_hits.png"
     description="Unfiltered vs Filtered download stats activity"
 %}
 
-With and without the filtering we can see the activity graph is almost normalised to visualise the individual days of activity. Where as before, it was dwarfed by the peaks caused by activities above the t value, 92.4.
+With and without the filtering we can see the activity graph is almost normalised to visualise the individual days of activity. 
+Where as before, it was dwarfed by the peaks caused by activities above the t value, 92.4.
 
-Looking further deeper into how this filter works and affects the data, this filter is cutting off accesses where the sum of common accesses from one country, on one day using the same method on a dataset is above t.
-To visualise the filtering, on an individual dataset level, the data was grouped up by country and date with a red line to represent the t value. This would clearly show where and when the spikes were occuring on a dataset and country level.
+The filter operates the same way as the eyeball attempt, cutting off accesses where the number of unique 
+IPs/country/day/download method/dataset is above *t*.
+To visualise the effect of the filtering on an individual dataset level, we grouped the data by country and date with a 
+red line to represent the *t* value. This would clearly show where and when the spikes were occuring on a dataset and country level.
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/Single_insight_anamoly_scatter.jpeg"
     description="Individual Dataset Analysis"
 %}
 
-This image gives a closer insight to how a spike is represented by a high activity from a single country, far beyond the group of countries below. This is an obvious indicator of an anomalous value. Following, a stamp map was generated for all the datasets over the period of time in 2021 for a wider look into the filtering.
+This image gives further insight with a spike representing high activity from a single country, far beyond the group of countries below. 
+This is an obvious indicator of an anomalous value. 
+Following this, we generated a stamp plot comparing all datasets over 2021 for a wider look at the spikes and the impact of the *t* value.
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/stampmap_2021.jpeg"
-    description="Wider view of filtering stamp map"
+    description="Stamp plot showing all datasets for 2021"
 %}
 
-This wider view would lose a lot of detail just by the quantity of graphs and size of each plot, however this gives a clearer picture to identify where these peaks occur. Anywhere where the threshold line is not at the top means there's an anomalous value above it, at a glance we can easily see where they occur.
-All of the anomalous data however does seem to come from CN, this could be interpreted as all those stats are from the same user using a torrent client and the filter seems consistent in detecting that activity.
+Anywhere where the threshold line is not at the top means there's 
+an anomalous value above it, at a glance we can easily see where they occur. All of the anomalous data points appear to 
+come from China, this could be interpreted as a single user using a torrent client and the filter seems consistent in 
+detecting that activity.
 
-The goal of the filter was to remove anomalous spikes in activity and it does just that. As this is a very simple method of classifying anomalies, a more sophisticated approach may exist. Above where the activity is possibly coming from one user, is there a way to fingerprint this user and others? Would it be possible identify and group torrent activity to a user value?
-The download stats is open to more methods whilst this project has allowed the visualisation of studying the data.
+The goal of the filter was to remove anomalous spikes in activity and it does just that. As this is a very simple 
+method of classifying anomalies, a more sophisticated approach may exist. Above where the activity is possibly coming 
+from one user, is there a way to fingerprint this user and others? Would it be possible identify and group torrent 
+activity to a user value?
+
+This project has allows us to visualise and investigate the logs to search for anomalies and given a potential method
+to limit the impact of distributed download behaviour.
+The download stats are open to further anyalsis and the visualisation has allowed us to learn more about this behaviour.
 
 # Conclusion
 
-The method of defining a threshold value via the mean and standard deviation has resulted in a crude filter that is good enough to take out the spikes that would bloat the CCI download stats. While not different from the original filter, it now has a more mathematical proof to support the filter than before.
+Defining a threshold value via the mean and standard deviation has resulted in a crude filter that is 
+good enough to take out the spikes that would bloat the CCI download stats. While not different from the original 
+filter, it now has a more mathematical proof to support the filter than before.
 
-Through the visualising of the filter, this was first tested on July 2021 with a t value of 56.2, which worked perfectly. Another concerning value was of Fabruary 2021 where the t value was 1.3, now this happened due to there being no anomalies and most accesses happened once per user per day. The final more confident value was decided to be 92.4 where it's a calculated value from 7 months is 2021. 
-This filter has many options for calculating a threshold value and can be used on any time frame that is deemed appropriate to ensure real users are kept and anomalies are removed.
+Through visualising the effects of the filter, we first tested July 2021 with a *t* value of 56.2, removing a spike in activity.
+Applying the same approach to February 2021, the *t* value was 1.3, this happened because there 
+were no anomalous spikes in that month and most accesses happened once per user per day. 
+The final value was decided to be 92.4 calculated from 7 months in 2021. 
+
+This filter has many options for calculating a threshold value and can be used on any time frame that is deemed 
+appropriate to ensure real users are kept and anomalies are removed.

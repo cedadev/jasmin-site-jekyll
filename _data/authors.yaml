@@ -5,3 +5,9 @@
     Richard joined CEDA through the graduate scheme following a degree in Meteorology and Climate Science and
     develops web interfaces to improve discoverability and searchability of the data holdings at CEDA.
     He specifies in building and maintaining an Elasticsearch cluster with indices used to provide data to CEDA services.
+- name: Mahir Rahman
+  position: Undergraduate Year-in-industry Student
+  image:
+  bio: |
+    Mahir joins us from University of... where he is studying for an Msc in Computer Science. He joins us for his
+    placement year.
