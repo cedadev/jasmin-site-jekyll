@@ -35,9 +35,12 @@ accessing the same dataset within a single day or two, by one download method. L
 (not possible to know without registered user data) that this is a single user using a novel access pattern, possibly torrent. This access
 pattern artificially bloats the number of users.
 
-**insert graph showing anomalous access pattern**
+{% include figure.html
+    image_url="assets/img/posts/2021-08-20-cci-download-stats/unfiltered_hits.png"
+    description="Unfiltered vs Filtered download stats activity"
+%}
 
-Historically, at CEDA, [we have used the pattern of registered users and applied it to unregistered user](need_link_from_graham). 
+Historically, at CEDA, [we have used the pattern of registered users and applied it to unregistered user](http://cedadocs.ceda.ac.uk/947/1/BADC_User_Report_2013.pdf). 
 As all access is un-registered, we don't have any point of reference in this case.
 
 Wanting to remove these anomalous peaks in user activity, we took to eyeballing the data and came up with a number: 10. It looked that there 
@@ -77,7 +80,7 @@ To visualise the effect of the filtering on an individual dataset level, we grou
 red line to represent the *t* value. This would clearly show where and when the spikes were occuring on a dataset and country level.
 
 {% include figure.html
-    image_url="assets/img/posts/2021-08-20-cci-download-stats/Single_insight_anamoly_scatter.jpeg"
+    image_url="assets/img/posts/2021-08-20-cci-download-stats/single_country_activity_plot.png"
     description="Individual Dataset Analysis"
 %}
 
@@ -86,7 +89,7 @@ This is an obvious indicator of an anomalous value.
 Following this, we generated a stamp plot comparing all datasets over 2021 for a wider look at the spikes and the impact of the *t* value.
 
 {% include figure.html
-    image_url="assets/img/posts/2021-08-20-cci-download-stats/stampmap_2021.jpeg"
+    image_url="assets/img/posts/2021-08-20-cci-download-stats/stampmap_2021.png"
     description="Stamp plot showing all datasets for 2021"
 %}
 
