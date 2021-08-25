@@ -4,6 +4,7 @@ title:  "What is a user? Removing anomalous behaviour from Anonymous access logs
 author: Mahir Rahman
 date:   2021-08-20 17:00:00
 tags: CCI, download stats
+use_math: true
 ---
 
 The Climate Change Initiative (CCI) [project's goal](https://climate.esa.int/en/esa-climate/esa-cci/Objective/) is to provide open, registration-free, 
