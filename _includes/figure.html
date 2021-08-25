@@ -1,4 +1,6 @@
 <figure>
+    <a href="{{ include.image_url | relative_url }}">
     <img src="{{ include.image_url | relative_url }}" style="{{ include.image_style | default: 'width: 50%; margin-left: auto; margin-right: auto; display: block' }}">
+    </a>
     <figcaption style="text-align: center"><em>{{ include.description }}</em></figcaption>
 </figure>
