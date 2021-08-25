@@ -13,7 +13,6 @@ thinking 1 IP = 1 USER. This article looks at methods to determine "normal" thre
 
 # Index
 
-- [Index](#index)
 - [Background](#background)
 - [Filtering](#filtering)
 - [Conclusion](#conclusion)
@@ -37,7 +36,7 @@ pattern artificially bloats the number of users.
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/unfiltered_hits.png"
-    description="Unfiltered vs Filtered download stats activity"
+    description="Raw download stats showing very large peaks in unique user counts"
 %}
 
 Historically, at CEDA, [we have used the pattern of registered users and applied it to unregistered user](http://cedadocs.ceda.ac.uk/947/1/BADC_User_Report_2013.pdf). 
@@ -68,7 +67,7 @@ Running the analysis over a whole year, 2021, we generated a *t* value of 92.4.
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/unfiltered_vs_filtered_hits.png"
-    description="Unfiltered vs Filtered download stats activity"
+    description="Comparison before and after applying the threshold value. Anomalous peaks removed."
 %}
 
 With and without the filtering we can see the activity graph is almost normalised to visualise the individual days of activity. 
@@ -81,7 +80,7 @@ red line to represent the *t* value. This would clearly show where and when the 
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/single_country_activity_plot.png"
-    description="Individual Dataset Analysis"
+    description="Closeup view of a single dataset. User count spikes above the threshold are annotated with their country of origin."
 %}
 
 This image gives further insight with a spike representing high activity from a single country, far beyond the group of countries below. 
@@ -90,6 +89,7 @@ Following this, we generated a stamp plot comparing all datasets over 2021 for a
 
 {% include figure.html
     image_url="assets/img/posts/2021-08-20-cci-download-stats/stampmap_2021.png"
+    image_style="width: 100%"
     description="Stamp plot showing all datasets for 2021"
 %}
 
