@@ -1,11 +1,21 @@
 ---
-layout: default
+layout: base_ceda
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<body>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+
+  <header>
+    <h1 class="page-heading">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+    <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+    {% if site.github.is_project_page %}
+      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+    {% endif %}
+  </header>
 
   {{ content }}
 
@@ -21,10 +31,33 @@ layout: default
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
+    <!-- <ul class="post-list"> -->
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      <li>
+        {% assign tags = post.tags %}
+        <div class="row">
+          <div class="card mb-3">
+            <div class="card-header">
+              {{ post.author }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+              </h5>
+              {%- if site.show_excerpts -%}
+                <p class="card-text">{{ post.excerpt }}</p>
+              {%- endif -%}
+              Tags: 
+              {%- for tag in tags -%}
+                <a href="#" class="badge badge-primary ml-2">{{ tag }}</a>
+              {%- endfor -%}
+            </div>
+            <div class="card-footer text-muted">
+              {{ post.date | date: date_format }}
+            </div>
+          </div>
+        </div>
+      <!-- <li>
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
@@ -34,9 +67,9 @@ layout: default
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
-      </li>
+      </li> -->
       {%- endfor -%}
-    </ul>
+    <!-- </ul> -->
 
     {% if site.paginate %}
       <div class="pager">
@@ -58,4 +91,4 @@ layout: default
 
   {%- endif -%}
 
-</div>
+</body>
