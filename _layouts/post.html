@@ -3,8 +3,6 @@ layout: base_ceda
 ---
 
 <head>
-
-  <!-- <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> -->
   <link rel="stylesheet" href="{{ '/assets/css/bio.css' | relative_url }}">
   {% if page.use_math %}
   {% include _mathjax_support.html %}
@@ -13,12 +11,7 @@ layout: base_ceda
 
 <body>
   
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ site.url }}">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{ page.title | default: site.title | default: site.github.repository_name }}</li>
-    </ol>
-  </nav>
+  {% include breadcrumb.html %}
 
   <header class="page-header" role="banner">
     <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
