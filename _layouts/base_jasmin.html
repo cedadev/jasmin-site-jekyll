@@ -2,6 +2,7 @@
 <html lang="{{ site.lang | default: "en-GB" }}">
   <head>
     <meta charset="UTF-8">
+    <title>{{ site.title }}</title>
 
     <!-- Google analytics snippet taken from original cayman theme. Can be controlled from 
          config file -->
@@ -44,7 +45,7 @@
                 <img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/img/jasmin_logo_white_greendots_h50.png" alt="JASMIN logo">
             </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -54,7 +55,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
 
       {% assign links = site.data.navigation %}
