@@ -1,0 +1,27 @@
+---
+layout: base_jasmin
+---
+
+<div class="container">
+
+    <div class="mt-5">
+        
+            <h2>Search for “the”</h2>
+        
+    </div>
+
+    <hr class="mb-5">
+
+    <div class="alert alert-dismissible alert-light small">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        This search tool uses <a href="https://developers.google.com/custom-search">Google's Programmable Search Engine</a> to make a targetted search of JASMIN-related web resources and categorise the results for you.
+    </div>
+
+    <!-- JASMIN cx (needs query parameter set as "s" rather than default "q" to work with codered search box -->
+    <div class="gcse-searchresults-only"
+    data-enableImageSearch="false"
+    data-filter="0"
+    data-refinementStyle="list"
+    data-queryParameterName="s"></div>
+
+</div>

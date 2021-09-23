@@ -69,6 +69,20 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+    <!-- Google CSE Search stuff -->
+    <script async src="https://cse.google.com/cse.js?cx=98d9bba52d1334b96"></script>
+    <script src="https://unpkg.com/mustache@4.1.0"></script>
+    <script src="/assets/js/result_bootstrap_mustache.js' %}"></script>
+    <script>
+        gcs_results_template = "/assets/html/bootstrap_results.html";
+        window.__gcse || (window.__gcse = {});
+        window.__gcse.searchCallbacks = {
+            web: {
+                ready: bootstrapResultsReadyCallback,
+            },
+        };
+    </script> 
+
   </head>
 
   <body id="body">
