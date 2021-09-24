@@ -1,0 +1,135 @@
+/* Custom style settings for apptheme_codered */
+
+/* make article layout more compact with cover image */
+@media (min-width: 768px) {
+        .codered-article.has-img .container {
+        position: relative;
+        box-shadow: none;
+        padding: 5vw;
+    }
+}
+
+.codered-article .article-body {
+    margin-top: 0em;
+    padding-bottom: 1em;
+}
+
+.codered-article.has-img div.hero-fg {
+    padding: 0px 0;
+}
+/* Add a text shadow to a h1 in a hero unit (used when caption for bg image used for hero text) */
+div.hero-bg h1 {
+    text-shadow: -2px 3px 4px black;
+}
+
+/* and to carousel captions */
+.carousel-caption {
+    text-shadow: -1px 1px 3px black;
+}
+
+/* Tickerme news ticker rendering */ 
+#ticker_container {
+    overflow: auto;
+}
+
+/* Remove rounded corners from alert components (looks neater) */
+.alert {
+    border-radius: 0px;
+    margin-bottom: 0;
+}
+
+footer {
+    margin-top: 1rem;
+}
+
+blockquote {
+    margin: 1em;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* add extra margin to top of tables */
+.table {
+    margin-top: 1rem;
+}
+
+/* position the caption above a table */
+caption {
+    caption-side: top;
+}
+
+/* JASMIN Service colours */
+:root {
+    --service-access:        #FBBB10;
+    --service-information:   #BE2BBB;
+    --service-compute:       #FF6900;
+    --service-storage:       #1E5DF8;
+    --service-cloud:         #34D5AE;
+    --service-network:       #9A1A9B;
+}
+
+/* Set table header colours for these service groups */
+.table-service-access > th,
+.table-service-access > thead {
+    background-color: var(--service-access);
+}
+
+.table-service-information > th,
+.table-service-information > thead {
+    background-color: var(--service-information);
+    color: var(--white);
+}
+
+.table-service-compute > th,
+.table-service-compute > thead {
+    background-color: var(--service-compute);
+    color: var(--white);
+}
+
+.table-service-storage > th,
+.table-service-storage > thead {
+    background-color: var(--service-storage);
+    color: var(--white);
+}
+
+.table-service-cloud > th,
+.table-service-cloud > thead {
+    background-color: var(--service-cloud);
+}
+
+.table-service-network > th,
+.table-service-network > thead {
+    background-color: var(--service-network);
+    color: var(--white);
+}
+
+/* Used in combination with card_transp.html custom card template */
+.bg-transp-grey-50 {
+    background-color: rgba(127,128,128,0.5);
+}
+
+/* Tweaks for hero unit appearance */
+.hero-fg {
+    background-color: rgba(127,128,128,0.2);
+}
+.hero-bg {
+    margin-bottom: 3rem;
+}
+/* Apply shadow to all text within a hero-fg */
+div.hero-fg {
+    text-shadow: -1px 1px 4px black;
+}
+
+/* Apply font style to Google CSE results (assumes JASMIN theme) */
+
+div.gsc-control-cse {
+    font-family: "BoosterNextFY-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Sticky footer */
+.site-footer{
+    position: sticky;
+    bottom: 0;
+    background-color: #ecf0f1;
+    width: 100%
+}

@@ -1,6 +1,14 @@
-title: JASMIN Site with Jekyll
-description: Technical blog from CEDA. Projects from the development and data management teams. Projects here may be experimental and unfinished.
+title: JASMIN Site
+description: JASMIN web site implemented using Jekyll.
 show_excerpts: true
 
 plugins:
   - jekyll-feed
+
+collections:
+  staff_members:
+    output: true
+  about_items:
+    output: true
+
+collections_dir: collections

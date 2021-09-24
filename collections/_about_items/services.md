@@ -1,18 +1,20 @@
 ---
 name: Services
-layout: page
-leader: What are the services which JASMIN offers?
-image: https://www.jasmin.ac.uk/media/images/_DSC7209.2e16d0ba.fill-1000x500.jpg
+layout: sectionitem
+leader_text: What are the services which JASMIN offers?
+leader_image: /assets/img/sections/section_tiles/DSC7209.2e16d0ba.fill-1000x500.jpg
+header_background_image: /assets/img/backgrounds/DSC7209.2e16d0ba.fill-2000x1000.jpg
+permalink: /about/services
 ---
 JASMIN's main purpose is to provide large-scale data analysis facilities to support data-intensive environmental science. To enable this, it provides a number of services in a unique purpose-built architecture to enable groups of scientists to work together collaboratively with large datasets. We can group (and colour-code!) these service groups as follows:
 
-![Service Groups](/assets/img/sections/service_groups.max-1000x1000.png)
+![Service Groups](/assets/img/sections/section_content/service_groups.max-1000x1000.png)
 
 ## User-facing services
 
 These are arranged as follows as the services which users can access:
 
-![Service Groups](/assets/img/sections/services.max-1000x1000.png)
+![Service Groups](/assets/img/sections/section_content/services.max-1000x1000.png)
 
 These services are briefly described below, but for full details of how to access and use JASMIN and its component services, please consult our extensive [documentation](https://help.jasmin.ac.uk) and [training workshop materials](https://github.com/cedadev/jasmin-workshop).
 
