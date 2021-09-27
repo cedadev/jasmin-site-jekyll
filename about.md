@@ -3,6 +3,7 @@ layout: section
 title: About
 permalink: /about/
 category: getting-started
+collection: about_items
 order: 1
 header_background_image: /assets/img/backgrounds/DSC7119.2e16d0ba.fill-2000x1000.jpg
 page_image: /assets/img/sections/section_content/DSC7046_UcVFFmM.max-1000x1000.jpg
