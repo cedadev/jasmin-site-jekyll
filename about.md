@@ -17,7 +17,7 @@ boxes:
    text: Interactive and batch compute for performance, or community cloud resources for autonomy and scalability
 ---
 
-![JASMIN Machine Room]( https://www.jasmin.ac.uk/media/images/_DSC7046_UcVFFmM.max-1000x1000.jpg ){:class="img-fluid w-50 float-right"}
+![JASMIN Machine Room]( {{ page.page_image }} ){:class="img-fluid w-50 float-right"}
 
 JASMIN is a globally-unique data analysis facility. It provides storage and compute facilities to enable data-intensive environmental science. 
 
@@ -32,26 +32,4 @@ JASMIN is designed, integrated and operated by the [Science &amp; Technology Fac
 Architected jointly between STFC's [Scientific Computing Department](https://www.scd.stfc.ac.uk/) and [CEDA](https://www.ceda.ac.uk/) within [RAL Space](https://www.ralspace.stfc.ac.uk/), it is operated and supported by a [small but innovative team](/about/team/) with expertise in systems administration, computer science, research software engineering and environmental informatics.
 
 
-<div class="block-html"><hr></div>
-
-<div class="container">
-{% for item in site.about_items %}    
-    <div class="row">
-        
-        <div class="col-md">
-            <a href="{{ item.url }}" title="{{ item.name }}">
-              <img src="{{ item.leader_image }}" class="w-100" alt="Services" />
-            </a>
-        </div>
-        
-        <div class="col-md">
-            <h3><a href="{{ item.url }}">{{ item.name }}</a></h3>
-            <p class="lead">{{ item.leader_text }}</p>
-            <!-- <p>{{ item.content | markdownify }}</p> -->
-        </div>
-    </div>
-    
-    <hr>
-{% endfor %}
-</div>
 

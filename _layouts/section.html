@@ -41,7 +41,32 @@ layout: base_jasmin
 {% endif %}
 
 <main id="content" class="main-content" role="main">
+
     {{ content }}
+
+    <div class="block-html"><hr></div>
+
+    <div class="container">
+    {% for item in site.about_items %}    
+        <div class="row">
+            
+            <div class="col-md">
+                <a href="{{ item.url }}" title="{{ item.name }}">
+                <img src="{{ item.leader_image }}" class="w-100" alt="Services" />
+                </a>
+            </div>
+            
+            <div class="col-md">
+                <h3><a href="{{ item.url }}">{{ item.name }}</a></h3>
+                <p class="lead">{{ item.leader_text }}</p>
+                <!-- <p>{{ item.content | markdownify }}</p> -->
+            </div>
+        </div>
+        
+        <hr>
+    {% endfor %}
+    </div>
+
     
     
 </main>
