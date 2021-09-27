@@ -10,6 +10,10 @@ collections:
     output: true
   about_items:
     output: true
+  help_items:
+    output: true
+  users_items:
+    output: true
 
 collections_dir: collections
 
