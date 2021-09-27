@@ -5,6 +5,7 @@ leader_text: What are the services which JASMIN offers?
 leader_image: /assets/img/sections/section_tiles/DSC7209.2e16d0ba.fill-1000x500.jpg
 header_background_image: /assets/img/backgrounds/DSC7209.2e16d0ba.fill-2000x1000.jpg
 permalink: /about/services
+order: 1
 ---
 JASMIN's main purpose is to provide large-scale data analysis facilities to support data-intensive environmental science. To enable this, it provides a number of services in a unique purpose-built architecture to enable groups of scientists to work together collaboratively with large datasets. We can group (and colour-code!) these service groups as follows:
 

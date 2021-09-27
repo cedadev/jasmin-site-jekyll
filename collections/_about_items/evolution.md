@@ -5,6 +5,7 @@ leader_text: Find out how JASMIN's infrastructure has evolved and about its road
 leader_image: /assets/img/sections/section_tiles/14EC2016_JASMIN_computing_cluster.2e16d0ba.fill-1000x500.jpg
 header_background_image: /assets/img/backgrounds/14EC2016_JASMIN_computing_cluste.2e16d0ba.fill-2000x1000.jpg
 permalink: /about/evolution
+order: 2
 ---
 Since JASMIN came into being in early 2012, it has grown significantly in scale and complexity but also in the number and variety of users it serves, and the types of scientific workflow it supports. As the requirements of its user community evolve, so does JASMIN. The Phases below describe the major procurement and upgrade projects which have taken place. These have been complemented by the work of teams within CEDA and STFC's scientific computing department in developing and maintaining the infrastructure and its component services and software to create the major e-infrastructure facility now familiar to over 1,500 users and 200 science projects.
 

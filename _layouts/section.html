@@ -8,7 +8,7 @@ layout: base_jasmin
 <body>
 
 <!-- {% include breadcrumb.html %} -->
-
+{{ page.collection }}
 
 <div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image }} );">
     <div class="hero-fg">
@@ -47,7 +47,15 @@ layout: base_jasmin
     <div class="block-html"><hr></div>
 
     <div class="container">
-    {% for item in site.about_items %}    
+    {% comment %}
+    - List all the collections matching this page's collection variable
+    - Iterate through that collection's list of pages
+    {% endcomment %}
+
+
+    {% assign sorted = site[page.collection] | sort: 'order' %}
+    {% for item in sorted %}
+
         <div class="row">
             
             <div class="col-md">
@@ -65,6 +73,7 @@ layout: base_jasmin
         
         <hr>
     {% endfor %}
+
     </div>
 
     
