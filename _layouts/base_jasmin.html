@@ -85,7 +85,16 @@
 
     <!-- local customisations --> 
     <link rel="stylesheet" href="/assets/css/codered-front.min.css">
-    <link rel="stylesheet" href="/assets/css/custom.css">
+    <!-- link rel="stylesheet" href="/assets/css/custom.css"> -->
+
+
+    {% if site.use_cacheBust %}
+      {% assign cacheBust = site.time | date:'?v=%s' %}
+    {% else %}
+      {% assign cacheBust = '' %}
+    {% endif %}
+    <!-- local customisations --> 
+    <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url | append: cacheBust }}">
 
   </head>
 
