@@ -9,7 +9,7 @@ layout: base_jasmin
 
 <!-- {% include breadcrumb.html %} -->
 
-<div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image }} );">
+<div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image | relative_url }} );">
     <div class="hero-fg">
       <div class="container">
         <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
@@ -65,7 +65,7 @@ layout: base_jasmin
                     
                     <div class="col-md">
                         <a href="{{ item.url }}" title="{{ item.name }}">
-                        <img src="{{ item.leader_image }}" class="w-100" alt="Services" />
+                        <img src="{{ item.leader_image | relative_url }}" class="w-100" alt="Services" />
                         </a>
                     </div>
                     

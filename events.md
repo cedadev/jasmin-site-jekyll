@@ -5,7 +5,7 @@ permalink: /events/
 category: getting-started
 collection: events_items
 order: 1
-header_background_image: /assets/img/backgrounds/bernd-klutsch-nE2HV5AUXFo-unspla.a944b47e.fill-2000x1000.jpg
+header_background_image: assets/img/backgrounds/bernd-klutsch-nE2HV5AUXFo-unspla.a944b47e.fill-2000x1000.jpg
 page_image: 
 boxes:
  - leader: JASMIN Forum 2012
