@@ -8,8 +8,6 @@ permalink: /about/governance
 order: 4
 ---
 
-![meeting]( /assets/img/sections/section_tiles/drew-beamer-Se7vVKzYxTI-unsplash.2e16d0ba.fill-1000x500.jpg ){:class="img-fluid w-50 float-right"}
-
 Governance for JASMIN is provided by two bodies:
 
 * The CEDA/JASMIN Board is composed of representatives from JASMIN's stakeholder community including funding bodies, host organisations and others. It defines the service which CEDA and JASMIN provide to their respective communities.
@@ -17,5 +15,7 @@ Governance for JASMIN is provided by two bodies:
 
 Further information about governance and stakeholder community information is available in CEDA's Annual Reports.
 
-
-![Governance]( /assets//img/sections/section_content/governance.max-1000x1000.png ){:class="img-fluid w-80 float-middle"}
+{% include figure.html
+    image_url="assets/img/sections/section_content/governance.max-1000x1000.png"
+    description="JASMIN governance structure"
+%}

@@ -2,8 +2,8 @@
 name: Funding
 layout: sectionitem
 leader_text: Investment to keep JASMIN running and to keep it at the cutting edge of environmental informatics
-leader_image: /assets/img/sections/section_tiles/josh-appel-NeTPASr-bmQ-unsplash.2e16d0ba.fill-1000x500.jpg
-header_background_image: /assets/img/backgrounds/josh-appel-NeTPASr-bmQ-unsplash.2e16d0ba.fill-2000x1000.jpg
+leader_image: assets/img/sections/section_tiles/josh-appel-NeTPASr-bmQ-unsplash.2e16d0ba.fill-1000x500.jpg
+header_background_image: assets/img/backgrounds/josh-appel-NeTPASr-bmQ-unsplash.2e16d0ba.fill-2000x1000.jpg
 permalink: /about/funding
 order: 3
 ---
@@ -198,4 +198,7 @@ Procurement phases are aligned with financial years and are principally provided
     </tbody>
 </table>
 
-![capital investment]( /assets/img/sections/section_content/jasmin_capital_value.max-1000x1000.png ){:class="img-fluid w-60 float-middle"}
+{% include figure.html
+    image_url="assets/img/sections/section_content/jasmin_capital_value.max-1000x1000.png"
+    description="JASMIN capital investments and capital value"
+%}
