@@ -1,0 +1,48 @@
+---
+layout: base_jasmin
+---
+
+<head>
+</head>
+
+<body>
+
+<!-- {% include breadcrumb.html %} -->
+
+<div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image }} );">
+    <div class="hero-fg">
+      <div class="container">
+        <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      </div>
+    </div>
+  </div>
+
+<main id="content" class="main-content" role="main">
+
+    {{ content }}
+
+    <div class="block-html"><hr></div>
+
+
+    
+    {% if page.boxes %}
+
+            {% assign sorted = page.boxes | sort: "order" | reverse %}
+            {% for box in sorted %}
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{box.leader}}</h4>
+                    <p class="card-text">{{box.text}}</p>
+                    <a href="{{box.url}}" class="btn btn-success">Learn more</a>
+                </div>
+            </div>
+            {% endfor %}
+
+    {% endif %}
+
+
+    
+</main>
+
+</body>
+
