@@ -18,3 +18,5 @@ collections:
 collections_dir: collections
 
 use_cacheBust: true
+
+baseurl: "/jasmin-site-jekyll/"
