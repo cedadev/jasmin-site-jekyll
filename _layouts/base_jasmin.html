@@ -160,7 +160,7 @@
               {% endfor %}
 
           </ul>
-          <form class="form-inline ml-auto" action="/search/" method="GET">
+          <form class="form-inline ml-auto" action="{{ 'search' | relative_url }}" method="GET">
             <div class="form-group"><label class="sr-only" for="id_s">Search</label><input type="text" name="s" maxlength="255" class="form-control" placeholder="Search" title="" id="id_s"></div>
             <input type="hidden" name="t" id="id_t">
             <div class="form-group">
