@@ -19,8 +19,9 @@ order: 3
 
 <div class="card mb-3 border-0 bg-transparent text-left">
     
-    
-    <img class="rounded-circle w-25 mx-auto" src="/assets/img/card_headers/badc_logo_with_transparency_200px.2e16d0ba.fill-150x150.png" alt="">
+    {% include image_card_header_round.html
+        image_url="assets/img/card_headers/badc_logo_with_transparency_200px.2e16d0ba.fill-150x150.png"
+    %}
     
     <div class="card-body">
         <h5 class="card-title text-center">CEDA team</h5>
@@ -37,8 +38,9 @@ order: 3
 
 <div class="card mb-3 border-0 bg-transparent ">
     
-    
-    <img class="rounded-circle w-25 mx-auto" src="/assets/img/card_headers/DSC7195.2e16d0ba.fill-150x150.jpg" alt="">
+    {% include image_card_header_round.html
+        image_url="assets/img/card_headers/DSC7195.2e16d0ba.fill-150x150.jpg"
+    %}
     
     <div class="card-body">
         <h5 class="card-title text-center">SCD team</h5>

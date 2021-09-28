@@ -74,7 +74,7 @@
     <script src="https://unpkg.com/mustache@4.1.0"></script>
     <script src="{{ 'assets/js/result_bootstrap_mustache.js' | relative_url }}"></script>
     <script>
-        gcs_results_template = "/assets/html/bootstrap_results.html";
+        gcs_results_template = "{{ 'assets/html/bootstrap_results.html' | relative_url }}";
         window.__gcse || (window.__gcse = {});
         window.__gcse.searchCallbacks = {
             web: {
@@ -84,9 +84,7 @@
     </script> 
 
     <!-- local customisations --> 
-    <link rel="stylesheet" href="/assets/css/codered-front.min.css">
-    <!-- link rel="stylesheet" href="/assets/css/custom.css"> -->
-
+    <link rel="stylesheet" href="{{ 'assets/css/codered-front.min.css' | relative_url }}">
 
     {% if site.use_cacheBust %}
       {% assign cacheBust = site.time | date:'?v=%s' %}
@@ -94,7 +92,7 @@
       {% assign cacheBust = '' %}
     {% endif %}
     <!-- local customisations --> 
-    <link rel="stylesheet" href="{{ "assets/css/custom.css" | relative_url | append: cacheBust }}">
+    <link rel="stylesheet" href="{{ 'assets/css/custom.css' | relative_url | append: cacheBust }}">
 
   </head>
 
