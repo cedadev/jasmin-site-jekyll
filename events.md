@@ -52,7 +52,9 @@ Find out about upcoming and recent events relevant to JASMIN organised by the CE
 * Webinars
 * Conferences
 
-### Content from previous events
+[Learn more](https://www.ceda.ac.uk/events/){: class="btn btn-success"}
+
+### Content from previous JASMIN events
 Find details of past JASMIN events now hosted on the CEDA website, including the JASMIN user conference series. Browse presentation materials and other content.
 
 See individual event pages linked below for further details.
