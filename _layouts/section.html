@@ -8,7 +8,6 @@ layout: base_jasmin
 <body>
 
 <!-- {% include breadcrumb.html %} -->
-{{ page.collection }}
 
 <div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image }} );">
     <div class="hero-fg">
@@ -46,37 +45,43 @@ layout: base_jasmin
 
     <div class="block-html"><hr></div>
 
-    <div class="container">
+    
     {% comment %}
-    - List all the collections matching this page's collection variable
-    - Iterate through that collection's list of pages
+    - If a collection is specified for this page to list, ...
+    - And there is a collection by that name
+    - And it contains items
+    - List all the items in that collection
     {% endcomment %}
 
+    {% if page.collection != null and page.collection != "" %}
+        {% assign coll = site[page.collection] %}
+        {% if coll.size > 0 %}
 
-    {% assign sorted = site[page.collection] | sort: 'order' %}
-    {% for item in sorted %}
+        <div class="container">
+            {% assign sorted = coll | sort: 'order' %}
+            {% for item in sorted %}
 
-        <div class="row">
-            
-            <div class="col-md">
-                <a href="{{ item.url }}" title="{{ item.name }}">
-                <img src="{{ item.leader_image }}" class="w-100" alt="Services" />
-                </a>
-            </div>
-            
-            <div class="col-md">
-                <h3><a href="{{ item.url }}">{{ item.name }}</a></h3>
-                <p class="lead">{{ item.leader_text }}</p>
-                <!-- <p>{{ item.content | markdownify }}</p> -->
-            </div>
+                <div class="row">
+                    
+                    <div class="col-md">
+                        <a href="{{ item.url }}" title="{{ item.name }}">
+                        <img src="{{ item.leader_image }}" class="w-100" alt="Services" />
+                        </a>
+                    </div>
+                    
+                    <div class="col-md">
+                        <h3><a href="{{ item.url }}">{{ item.name }}</a></h3>
+                        <p class="lead">{{ item.leader_text }}</p>
+                        <!-- <p>{{ item.content | markdownify }}</p> -->
+                    </div>
+                </div>
+                
+                <hr>
+            {% endfor %}
         </div>
-        
-        <hr>
-    {% endfor %}
 
-    </div>
-
-    
+        {% endif %}
+    {% endif %}
     
 </main>
 
