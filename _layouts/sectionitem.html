@@ -4,7 +4,7 @@ layout: base_jasmin
 
 <body>
 
-<div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image | relative_url }} );">
+  <div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image | relative_url }} );">
     <div class="hero-fg">
       <div class="container">
         <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
@@ -12,11 +12,9 @@ layout: base_jasmin
     </div>
   </div>
 
-<main id="content" class="main-content" role="main">
+  <div class="container">
     {{ content }}
+  </div>
     
-    
-</main>
-
 </body>
 
