@@ -41,7 +41,25 @@ layout: base_jasmin
 
 <main id="content" class="main-content" role="main">
 
-    {{ content }}
+    {% if page.page_image %}
+        <div class="row">
+            <div class="col-sm-6">
+                {{ content }}
+            </div>
+            <div class="col-sm-6">
+                <figure class="figure">
+                    <a href="{{ page.page_image | relative_url }}">
+                        <img src="{{ page.page_image | relative_url }}" class="img-fluid float-right">
+                    </a>
+                    {% if page.page_image_caption %}
+                        <figcaption class="figure-caption">{{ page.page_image_caption }}</figcaption>
+                    {% endif %}
+                </figure>
+            </div>
+        </div>
+    {% else %}
+        {{ content }}
+    {% endif %}
 
     <div class="block-html"><hr></div>
 

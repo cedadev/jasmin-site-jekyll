@@ -7,6 +7,7 @@ collection: about_items
 order: 1
 header_background_image: assets/img/backgrounds/DSC7119.2e16d0ba.fill-2000x1000.jpg
 page_image: assets/img/sections/section_content/DSC7046_UcVFFmM.max-1000x1000.jpg
+page_image_caption: JASMIN machine room
 boxes:
  - leader: Supporting large-scale data analysis
    text: Unique combination of resources enables data-intensive science
@@ -17,8 +18,6 @@ boxes:
  - leader: Flexible compute options
    text: Interactive and batch compute for performance, or community cloud resources for autonomy and scalability
 ---
-
-![JASMIN Machine Room]( {{ page.page_image }} ){:class="img-fluid w-50 float-right"}
 
 JASMIN is a globally-unique data analysis facility. It provides storage and compute facilities to enable data-intensive environmental science. 
 
