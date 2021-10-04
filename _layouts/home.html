@@ -2,78 +2,49 @@
 layout: base_jasmin
 ---
 
-<body>
-
-<div class="jumbotron">
-    <h1 class="display-4">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-    <p class="lead">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+<div class="alert alert-primary alert-dismissable fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="small" style="color: #6683B7;">JASMIN latest from <a href="https://www.ceda.ac.uk/blog/tag/jasmin/" target="_blank" style="color: inherit;">CEDA news </a>&nbsp;<a href="https://twitter.com/cedanews" style="color: inherit;"><i class="fab fa-twitter"></i></a></span>
+        <div id="wrapper"></div>
 </div>
 
-{{ content }}
-
-
-{% if site.paginate %}
-    {% assign posts = paginator.posts %}
-{% else %}
-    {% assign posts = site.posts %}
-{% endif %}
-
-
-{%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-        <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-{%- for post in posts -%}
-    {% assign tags = post.tags %}
-    <div class="row">
-        <div class="card mb-3">
-            <div class="card-body">
-                <h3 class="card-title">
-                    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                </h3>
-                {%- if site.show_excerpts -%}
-                    <p class="card-text">{{ post.excerpt }}</p>
-                {%- endif -%}
-                Tags:
-                {%- for tag in tags -%}
-                    <a href="{{ site.url }}/tags#{{tag}}" class="badge badge-primary ml-2">{{ tag }}</a>
-                {%- endfor -%}
-            </div>
-            <div class="card-footer text-muted">
-                {{ post.date | date: date_format }} | {{ post.author }}
+<div class="block-hero">
+    <div class="hero-bg" style="background-image:url( {{ page.hero_background_image | relative_url }} );">
+    <div class="hero-fg" style="">
+        <div class="container">
+            <div class="row">
+                <div  class="col-md">
+                    <h2>{{ page.hero_title }}</h2>
+                    <h4>{{ page.hero_tagline }}</h4>
+                </div>
             </div>
         </div>
     </div>
-{%- endfor -%}
-
-{% if site.paginate %}
-<div class="pager">
-    <ul class="pagination">
-        {%- if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page
-            }}</a></li>
-        {%- else %}
-        <li>
-            <div class="pager-edge">•</div>
-        </li>
-        {%- endif %}
-        <li>
-            <div class="current-page">{{ paginator.page }}</div>
-        </li>
-        {%- if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-        <li>
-            <div class="pager-edge">•</div>
-        </li>
-        {%- endif %}
-    </ul>
 </div>
-{%- endif %}
 
-{%- endif -%}
+{% if page.boxes %}
+    <div class="block-cardgrid">
+        <div class="container-fluid">
+            <div class="card-deck">
+                {% for box in page.boxes %}
+                <div class="card mb-3">
+                    <img class="card-img-top w-100" src="{{ box.background_image }}" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{box.title}}</h5>
+                        <div class="card-text">
+                            <p>{{box.leader}}</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{box.url | relative_url}}" title="Go" class="btn btn-secondary stretched-link">Go</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
 
-<hr>
-
-</body>
+{{ content }}

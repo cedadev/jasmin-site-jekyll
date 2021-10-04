@@ -82,7 +82,7 @@
                 ready: bootstrapResultsReadyCallback,
             },
         };
-    </script> 
+    </script>
 
     <!-- local customisations --> 
     <link rel="stylesheet" href="{{ 'assets/css/codered-front.min.css' | relative_url }}">
@@ -94,6 +94,8 @@
     {% endif %}
     <!-- local customisations --> 
     <link rel="stylesheet" href="{{ 'assets/css/custom.css' | relative_url | append: cacheBust }}">
+
+    {% include parse_jasmin_news.html %}
 
   </head>
 
@@ -122,10 +124,7 @@
         </div>
       {% endif %}
 
-  <!-- navbar --> 
-<!-- navbar --> 
-  <!-- navbar --> 
-<!-- navbar --> 
+
   <!-- navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
