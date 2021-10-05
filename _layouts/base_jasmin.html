@@ -83,6 +83,8 @@
             },
         };
     </script>
+    <!-- cookielaw -->
+    <!-- <script src="{{ 'assets/js/cookielaw.js' | relative_url }}"></script> -->
 
     <!-- local customisations --> 
     <link rel="stylesheet" href="{{ 'assets/css/codered-front.min.css' | relative_url }}">
@@ -101,27 +103,11 @@
 
   <body id="body">
     <div id="root" class="d-flex flex-column sticky-footer-wrapper min-vh-100">
-
       {% if site.google_tag_manager %}
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDG2XX7"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-      {% endif %}
-
-      {% if cookie_banner %}
-      {# TODO sort out cookier banner #}
-        <div class="alert alert-info text-center" id="CookielawBanner">
-          This website uses cookies.
-          By continuing to use this website you are agreeing to our use of cookies.&nbsp;
-            <div class="btn-group">
-              <button type="button" class="btn btn-secondary"
-              onclick="javascript:Cookielaw.createCookielawCookie();">OK</a>
-
-              <button type="button" class="btn btn-secondary"
-              onclick="javascript:window.open('http://www.ceda.ac.uk/privacy-and-cookies/')">Find out more</button>
-            </div>
-        </div>
       {% endif %}
 
 
@@ -178,6 +164,16 @@
 
     <main class="flex-fill">
       <!-- main content container -->
+
+      <!-- <div class="alert alert-info text-center" id="CookielawBanner">
+      This website uses cookies.
+      By continuing to use this website you are agreeing to our use of cookies.&nbsp;
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" onclick="javascript:Cookielaw.createCookielawCookie();">OK</button>
+          <button type="button" class="btn btn-secondary" onclick="javascript:window.open('https://accounts.jasmin.ac.uk/account/privacy/')">Find out more</button>
+        </div>
+      </div> -->
+
       <div id="content">
         {{ content }}
       </div>
@@ -241,6 +237,18 @@
     <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/popper.js/dist/umd/popper.min.js"></script>
     <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/js/custom.js"></script>
+
+    <!-- Cookie consent -->
+    <script src="{{ 'assets/js/jquery.cookie-consent.js' | relative_url }}"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#cookieConsent').cookieConsent({
+          message: 'This website uses cookies. By using this website you consent to our use of these cookies.&nbsp;',
+          testing: true
+        });
+      });
+    </script>
 
     </div> <!-- root -->
 
