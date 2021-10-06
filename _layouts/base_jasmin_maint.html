@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-GB" }}">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google analytics snippet taken from original cayman theme. Can be controlled from 
+         config file -->
+    {% if site.google_tag_manager %}
+      <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NDG2XX7');</script>
+        <!-- End Google Tag Manager -->
+    {% endif %}
+
+
+    <!-- Bootstrap Core
+    CSS -->
+    <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/4/flatly/bootstrap.css" media="screen">
+    <!-- Custom CSS -->
+    <!-- customisations of vanilla bootstrap by the bootswatch variant we're using (output from Bootswatch) -->
+    <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/css/custom.min.css">
+
+<!--
+    /**
+    * @license
+    * MyFonts Webfont Build ID 3596617, 2018-06-14T06:54:30-0400
+    * 
+    * The fonts listed in this notice are subject to the End User License
+    * Agreement(s) entered into by the website owner. All other parties are 
+    * explicitly restricted from using the Licensed Webfonts(s).
+    * 
+    * You may obtain a valid license at the URLs below.
+    * 
+    * Webfont: BoosterNextFY-Thin by Black Foundry
+    * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/thin/
+    * 
+    * Webfont: BoosterNextFY-Regular by Black Foundry
+    * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/regular/
+    * 
+    * Webfont: BoosterNextFY-Medium by Black Foundry
+    * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/medium/
+    * 
+    * Webfont: BoosterNextFY-Black by Black Foundry
+    * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/black/
+    * 
+    * Webfont: BoosterNextFY-Light by Black Foundry
+    * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/light/
+    * 
+    * Webfont: BoosterNextFY-Bold by Black Foundry
+    * URL: https://www.myfonts.com/fonts/black-foundry/booster-next-fy/bold/
+    * 
+    * 
+    * License: https://www.myfonts.com/viewlicense?type=web&buildid=3596617
+    * Licensed pageviews: 10,000
+    * Webfonts copyright: Copyright (c) 2013 by FONTYOU. All rights reserved.
+    * www.fontyou.com
+    * 
+    * © 2018 MyFonts Inc
+    */
+
+    -->
+    <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/css/MyFontsWebfontsKit.css">
+    <link rel="stylesheet" type="text/css" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/css/webfonts.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Google CSE Search stuff -->
+    <script async src="https://cse.google.com/cse.js?cx=98d9bba52d1334b96"></script>
+    <script src="https://unpkg.com/mustache@4.1.0"></script>
+    <script src="{{ 'assets/js/result_bootstrap_mustache.js' | relative_url }}"></script>
+    <script>
+        gcs_results_template = "{{ 'assets/html/bootstrap_results.html' | relative_url }}";
+        window.__gcse || (window.__gcse = {});
+        window.__gcse.searchCallbacks = {
+            web: {
+                ready: bootstrapResultsReadyCallback,
+            },
+        };
+    </script>
+    <!-- cookielaw -->
+    <!-- <script src="{{ 'assets/js/cookielaw.js' | relative_url }}"></script> -->
+
+    <!-- local customisations --> 
+    <link rel="stylesheet" href="{{ 'assets/css/codered-front.min.css' | relative_url }}">
+
+    {% if site.use_cacheBust %}
+      {% assign cacheBust = site.time | date:'?v=%s' %}
+    {% else %}
+      {% assign cacheBust = '' %}
+    {% endif %}
+    <!-- local customisations --> 
+    <link rel="stylesheet" href="{{ 'assets/css/custom.css' | relative_url | append: cacheBust }}">
+
+    {% include parse_jasmin_news.html %}
+
+  </head>
+
+  <body id="body">
+    <div id="root" class="d-flex flex-column sticky-footer-wrapper min-vh-100">
+      {% if site.google_tag_manager %}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDG2XX7"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+      {% endif %}
+
+
+  <!-- navbar --> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container">
+        <a href="{{ site.url }}{{ site.baseurl }}" class="navbar-brand">
+          <img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/img/jasmin_logo_white_greendots_h50.png" alt="JASMIN logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            {% assign links = site.data.navigation %}
+              {% for link in links %}
+                  {% assign class = nil %}
+                  {% if page.url contains link.url %}
+                      {% assign class = 'active' %}
+                  {% endif %}
+                  {% if link.sublinks %}
+                      <li class="nav-item dropdown {{ class }}">
+                          <a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
+                          <div class="dropdown-menu">
+                              {% for sublink in link.sublinks %}
+                                  {% if sublink.title == 'separator' %}
+                                      <div class="dropdown-divider"></div>
+                                  {% else %}
+                                      
+                                          <a class="dropdown-item" href="{{ site.url }}{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
+                                      
+                                  {% endif %}
+                              {% endfor %}
+                          </div>
+                      </li>
+                  {% else %}
+                      <li class="nav-item {{ class }}">
+                          <a class="nav-link" href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                      </li>
+                  {% endif %}
+              {% endfor %}
+
+          </ul>
+          <form class="form-inline ml-auto" action="{{ 'search' | relative_url }}" method="GET">
+            <div class="form-group"><label class="sr-only" for="id_s">Search</label><input type="text" name="s" maxlength="255" class="form-control" placeholder="Search" title="" id="id_s"></div>
+            <input type="hidden" name="t" id="id_t">
+            <div class="form-group">
+              <button class="btn btn-outline-secondary ml-2" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-fill">
+      <!-- main content container -->
+
+      <!-- <div class="alert alert-info text-center" id="CookielawBanner">
+      This website uses cookies.
+      By continuing to use this website you are agreeing to our use of cookies.&nbsp;
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" onclick="javascript:Cookielaw.createCookielawCookie();">OK</button>
+          <button type="button" class="btn btn-secondary" onclick="javascript:window.open('https://accounts.jasmin.ac.uk/account/privacy/')">Find out more</button>
+        </div>
+      </div> -->
+
+      <div id="content">
+        <h3>Sorry!</h3>
+        
+        <p>This site is currently undergoing maintenance and will be back shortly.<h3>
+
+      </div>
+    </main>
+
+    <!-- jasmin footer -->
+    <footer class="site-footer border-top pt-3 px-3 mt-3">
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col">
+            <h2 class="footer-heading">Useful links</h2>
+              <ul class="footer-list">
+                <li><a href="https://www.jasmin.ac.uk" target="_blank">JASMIN</a></li>
+                <li><a href="https://www.ceda.ac.uk" target="_blank">CEDA</a></li>
+                <li><a href="https://accounts.jasmin.ac.uk" target="_blank">Accounts Portal</a></li>
+                <li><a href="https://cloud.jasmin.ac.uk" target="_blank">Cloud Portal</a></li>
+                <li><a href="https://projects.jasmin.ac.uk" target="_blank">Projects Portal</a></li>
+                <li><a href="https://notebooks.jasmin.ac.uk" target="_blank">Notebook Service</a></li>
+              </ul>
+          </div>
+
+          <div class="col">
+            <h2 class="footer-heading">Contact us</h2>
+            <ul class="footer-list">
+              <li><a href="https://help.jasmin.ac.uk" target="_blank"><i class="mr-2 fas fa-fw fa-bookmark"></i>Documentation</a></li>
+              <li><a href="{{ site.url }}{{ site.baseurl }}help/contact/" target="_blank"><i class="mr-2 fas fa-fw fa-life-ring"></i>Helpdesk</a></li>
+              <li><a href="https://twitter.com/cedanews" target="_blank"><i class="mr-2 fab fa-fw fa-twitter"></i>Twitter</a></li>
+              <li><a href="https://www.youtube.com/channel/UCYjSH2ET9nLMhDcXa5y2OMg" target="_blank"><i class="mr-2 fab fa-fw fa-youtube"></i>YouTube</a></li>
+            </ul>  
+          </div>
+      
+          <div class="text-center col-md-5">
+            <p class="mb-0"><strong>JASMIN is operated by the Science and Technology Facilities Council on behalf of the Natural Environment Research Council.</strong></p>
+            <a href="https://stfc.ukri.org" title="STFC" target="_blank">
+              <img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/img/UKRI_STF_Council-Logo_Horiz-RGB_h80.png" title="STFC UKRI logo" alt="STFC UKRI logo" height="80">
+            </a>
+            <a href="https://nerc.ukri.org/" title="NERC" target="_blank">
+              <img src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/img/UKRI_NER_Council-Logo_Horiz-RGB_h80.png" title="NERC UKRI logo" alt="NERC UKRI logo" height="80">
+            </a>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="py-3 col">
+            <ul class="d-inline-block list-inline mb-0">
+              <li class="list-inline-item mr-3">© Copyright 2020 STFC</li>
+              <li class="list-inline-item mr-3"><a href="https://accounts.jasmin.ac.uk/account/accessibility/" target="_blank">Accessibility</a></li>
+              <li class="list-inline-item mr-3"><a href="https://accounts.jasmin.ac.uk/account/support/" target="_blank">Support</a></li>
+              <li class="list-inline-item mr-3"><a href="https://accounts.jasmin.ac.uk/account/privacy/" target="_blank">Privacy</a></li>
+              <li class="list-inline-item"><a href="https://accounts.jasmin.ac.uk/account/conditions/" target="_blank">Terms and Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/js/custom.js"></script>
+
+    <!-- Cookie consent -->
+    <script src="{{ 'assets/js/jquery.cookie-consent.js' | relative_url }}"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#cookieConsent').cookieConsent({
+          message: 'This website uses cookies. By using this website you consent to our use of these cookies.&nbsp;',
+          testing: true
+        });
+      });
+    </script>
+
+    </div> <!-- root -->
+
+    <!-- JASMIN help beacon --> 
+    <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
+    <script type="text/javascript">window.Beacon('init', 'a108cc24-88df-4d59-9e84-17ba328fc105')</script>
+  </body>
+</html>

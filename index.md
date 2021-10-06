@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: base_jasmin_maint
 
 hero_title: JASMIN
 hero_tagline: The UK's data analysis facility for environmental science
