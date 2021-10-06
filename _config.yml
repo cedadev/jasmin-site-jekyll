@@ -19,4 +19,4 @@ collections_dir: collections
 
 use_cacheBust: true
 
-baseurl: ""
+baseurl: "/"
