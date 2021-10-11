@@ -1,0 +1,91 @@
+---
+layout: sectionitem
+---
+
+{{ content }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="270" src="{{ page.video_src }}" title="{{ page.video_caption }}" width="480"></iframe>
+                </div>
+                <figcaption class="figure-caption">{{ page.video_caption }}</figcaption>
+            </div> 
+        </div>
+
+        <div class="col-md-6 ">
+            <div class="">
+                
+                {% if page.carousel %}
+                <div id="carousel-3" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        {% for item in page.carousel.items %}
+                            <li data-target="#carousel-3" data-slide-to="{{ forloop.index0 }}" class=""></li>
+                        {% endfor %}
+                    </ol>
+                    
+                    <div class="carousel-inner">
+                        {% for item in page.carousel.items %}
+                            <div class="carousel-item {% if forloop.first == true %}active{% endif %}">
+                                <img class="d-block w-100" src="{{ item.image | relative_url }}" alt="{{ item.caption }}">
+                                <div class="carousel-caption">
+                                    <div class="block-text">
+                                        <div class="rich-text"><p>{{ item.caption }}</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                
+                    
+                    <a class="carousel-control-prev" href="#carousel-3" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-3" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    
+                
+                </div>
+                {% endif %}
+
+                <figcaption class="figure-caption">{{ page.carousel.caption }}</figcaption>
+            </div> 
+        </div>
+
+    </div>
+</div>
+
+<hr>
+
+{% if page.phases %}
+    {% for phase in page.phases %}
+        <h3>{{ phase.title }}</h3>
+        <h4>{{ phase.subtitle }}</h3>
+        {{ phase.intro_text | markdownify }}
+        <table class="table">
+            <caption>Details of {{ phase.title }}</caption>
+            <thead>
+                <tr>
+                        <th scope="col">Component</th>
+                        <th scope="col">Details</th>
+                        <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in phase.items %}
+                <tr>
+                    <th scope="row">{{ item.component }}</th>
+                    <td>{{ item.details }}</td>
+                    <td>{{ item.extra }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+{% endif %}
+
