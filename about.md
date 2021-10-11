@@ -21,7 +21,7 @@ boxes:
 
 JASMIN is a globally-unique data analysis facility. It provides storage and compute facilities to enable data-intensive environmental science. 
 
-Over [1500 users](/users/community/) are currently supported [exploring topics](/insights)  ranging from climate change and oceanography to air pollution, earthquake deformation and analysis of wildlife populations.
+Over [1500 users](/users/community/) are currently supported exploring topics ranging from climate change and oceanography to air pollution, earthquake deformation and analysis of wildlife populations.
 
 Centred more around storage and data analysis than a "traditional" supercomputer, JASMIN provides flexibility for a wide range of data-intensive analysis workflows.
 
