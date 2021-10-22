@@ -8,7 +8,7 @@ permalink: /users/resources-projects
 order: 2
 ---
 
-Resources on JASMIN such as storage and compute are allocated to science community "consortia". Each consortium has a manager: a representative of that science community who is in touch with its major activities and understands the resource requirements for projects in that domain. Representatives of individual projects should discuss requirements with their Consortium Manager, who is best placed to make decisions about the allocation of JASMIN resources within that consortium. Requirements can be documented using the "[JASMIN Resource Management](https://manage.jasmin.ac.uk)" tool, but need to be approved by a Consortium Manager before being passed to the JASMIN Team for provisioning.
+Resources on JASMIN such as storage and compute are allocated to science community "consortia". Each consortium has a manager: a representative of that science community who is in touch with its major activities and understands the resource requirements for projects in that domain. Representatives of individual projects should discuss requirements with their Consortium Manager, who is best placed to make decisions about the allocation of JASMIN resources within that consortium. Requirements can be documented using the "[JASMIN Projects Portal](https://projects.jasmin.ac.uk)", but need to be approved by a Consortium Manager before being passed to the JASMIN Team for provisioning.
 
 The overall allocation of resources to consortia is managed and reviewed periodically by the [CEDA/JASMIN Board](/about/governance/).
 
