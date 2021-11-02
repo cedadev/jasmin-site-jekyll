@@ -104,7 +104,7 @@ The following consortia exist, organised by science community:
                     
                 
                     
-                        <td>Victoria Bennett, CEDA</td>
+                        <td>Hartmut Boesch, University of Leicester</td>
                     
                 
             </tr>
