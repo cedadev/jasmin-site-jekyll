@@ -8,13 +8,16 @@ plugins:
 collections:
   staff_members:
     output: true
+    permalink: /:collection/:name/
   about_items:
     output: true
     permalink: /:collection/:name/
   help_items:
     output: true
+    permalink: /:collection/:name/
   users_items:
     output: true
+    permalink: /:collection/:name/
 
 collections_dir: collections
 
