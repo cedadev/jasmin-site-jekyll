@@ -4,7 +4,7 @@ layout: sectionitem
 leader_text: How are resources for projects managed?
 leader_image: assets/img/sections/section_tiles/DSC7024_MVVfhMZ.2e16d0ba.fill-1000x500.jpg
 header_background_image: assets/img/backgrounds/DSC7024_MVVfhMZ.2e16d0ba.fill-2000x1000.jpg
-permalink: /users/resources-projects
+permalink: /users/resources-projects/
 order: 2
 ---
 

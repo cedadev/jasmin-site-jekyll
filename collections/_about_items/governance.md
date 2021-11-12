@@ -4,7 +4,7 @@ layout: sectionitem
 leader_text: Who manages decisions for JASMIN?
 leader_image: /assets/img/sections/section_tiles/drew-beamer-Se7vVKzYxTI-unsplash.2e16d0ba.fill-1000x500.jpg
 header_background_image: /assets/img/backgrounds/drew-beamer-Se7vVKzYxTI-unsplash.2e16d0ba.fill-2000x1000.jpg
-permalink: /about/governance
+permalink: /about/governance/
 order: 4
 ---
 

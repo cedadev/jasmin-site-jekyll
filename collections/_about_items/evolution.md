@@ -4,7 +4,7 @@ layout: sectionitem_evolution
 leader_text: Find out how JASMIN's infrastructure has evolved and about its roadmap for the future
 leader_image: assets/img/sections/section_tiles/14EC2016_JASMIN_computing_cluster.2e16d0ba.fill-1000x500.jpg
 header_background_image: assets/img/backgrounds/14EC2016_JASMIN_computing_cluste.2e16d0ba.fill-2000x1000.jpg
-permalink: /about/evolution
+permalink: /about/evolution/
 order: 2
 
 phases:
