@@ -4,7 +4,7 @@ layout: sectionitem
 leader_text: Who can access JASMIN, and how to do it.
 leader_image: assets/img/sections/section_tiles/DSC7130_A7GHP9m.15015514.fill-1000x500.jpg
 header_background_image: assets/img/backgrounds/DSC7130_A7GHP9m.15015514.fill-2000x1000.jpg
-permalink: /users/access
+permalink: /users/access/
 order: 1
 ---
 

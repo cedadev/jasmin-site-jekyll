@@ -4,7 +4,7 @@ layout: sectionitem
 leader_text: There are several ways that you can contact us...
 leader_image: /assets/img/sections/section_tiles/melinda-gimpel-5Ne6mMQtIdo-unspla.2e16d0ba.fill-1000x500.jpg
 header_background_image: /assets//img/backgrounds/melinda-gimpel-5Ne6mMQtIdo-unspl.2e16d0ba.fill-2000x1000.jpg
-permalink: /help/contact
+permalink: /help/contact/
 order: 2
 ---
 

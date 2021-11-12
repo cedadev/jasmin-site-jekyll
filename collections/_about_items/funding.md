@@ -4,7 +4,7 @@ layout: sectionitem
 leader_text: Investment to keep JASMIN running and to keep it at the cutting edge of environmental informatics
 leader_image: assets/img/sections/section_tiles/josh-appel-NeTPASr-bmQ-unsplash.2e16d0ba.fill-1000x500.jpg
 header_background_image: assets/img/backgrounds/josh-appel-NeTPASr-bmQ-unsplash.2e16d0ba.fill-2000x1000.jpg
-permalink: /about/funding
+permalink: /about/funding/
 order: 3
 ---
 

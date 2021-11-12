@@ -4,7 +4,7 @@ layout: sectionitem
 leader_text: Over 1500 researchers, from a range of environmental science disciplines, make up the JASMIN user community.
 leader_image: assets/img/sections/section_tiles/intro.2e16d0ba.fill-1000x500.png
 header_background_image: assets/img/backgrounds/intro.2e16d0ba.fill-2000x1000.png
-permalink: /users/community
+permalink: /users/community/
 order: 3
 ---
 
