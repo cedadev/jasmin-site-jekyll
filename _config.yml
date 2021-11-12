@@ -10,6 +10,7 @@ collections:
     output: true
   about_items:
     output: true
+    permalink: /:collection/:name/
   help_items:
     output: true
   users_items:
