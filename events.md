@@ -40,7 +40,7 @@ boxes:
 
  - leader: User Seminar Series 2021
    text: We weren't able to hold an in-person user conference in 2020 so we moved the event online.
-   url: https://www.ceda.ac.uk/events/jasmin2020-virtual-event/
+   url: https://www.ceda.ac.uk/events/jasmin-user-seminar-series/
    order: 7
 ---
 
