@@ -1,0 +1,46 @@
+---
+layout: base_jasmin
+---
+
+<body>
+
+  <div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image | relative_url }} );">
+    <div class="hero-fg">
+      <div class="container">
+        <h1>{{ page.name | default: site.title | default: site.github.repository_name }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    {{ content }}
+
+    <br>
+
+    {% if page.consortia %}
+        <table class="table">
+            <caption>JASMIN Consortia</caption>
+
+            <thead>
+                <tr>
+                        <th scope="col">Abbreviation</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Manager</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in page.consortia | sort: "abbrev" %}
+                <tr>
+                    <th scope="row">{{ item.abbrev }}</th>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.manager }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+  </div>
+    
+</body>
+
