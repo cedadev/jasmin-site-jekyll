@@ -1,0 +1,49 @@
+---
+layout: base_jasmin
+---
+
+<body>
+
+  <div class="hero-bg mb-5" style="background-image:url( {{ page.header_background_image | relative_url }} );">
+    <div class="hero-fg">
+      <div class="container">
+        <h1>{{ page.name | default: site.title | default: site.github.repository_name }}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    {{ content }}
+
+    <br>
+
+    {% if page.boxes %}
+    <div class="container">
+        <div class="row ">
+            {% for item in page.boxes %}
+            <div class="col-md-6 ">
+                <div class="card mb-3 ">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                    
+                        <div class="card-text">
+                            <div class="rich-text">
+                                <ul>
+                                    {% for aitem in item.answers %}
+                                        <li>{{ aitem.answer }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+  </div>
+    
+</body>
+
