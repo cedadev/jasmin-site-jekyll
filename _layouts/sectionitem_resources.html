@@ -29,7 +29,8 @@ layout: base_jasmin
                 </tr>
             </thead>
             <tbody>
-                {% for item in page.consortia | sort: "abbrev" %}
+                {% assign items = page.consortia | sort: "abbrev", "last" %}
+                {% for item in items %}
                 <tr>
                     <th scope="row">{{ item.abbrev }}</th>
                     <td>{{ item.name }}</td>
