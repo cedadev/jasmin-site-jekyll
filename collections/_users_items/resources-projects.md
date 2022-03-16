@@ -44,6 +44,10 @@ consortia:
     name: Ocean & Shelf Seas
     manager: Andrew Coward, NOC
 
+  - abbrev: polsci
+    name: Polar Science
+    manager: TBD
+
   - abbrev: semp
     name: Solid Earth & Mineral Physics
     manager: John Brodholt, UCL
