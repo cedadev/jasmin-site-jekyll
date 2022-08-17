@@ -196,6 +196,21 @@ OpenDAP4GWS<br>Cluster-as-a-Service testbed<br>Containerised Jupyter Notebook de
       details: "Tape server hardware replacements<br>Tape media<br>New colder-storage system design & development to replace ET & JDMA"
       extra: "<br>18PB media"
     
+ - title: Phase 7.5 / JASMINx Phase 1 (2021-2022)
+   subtitle: Strategic investment in tape storage, LOTUS upgrade and consultancy on future user requirements.
+   intro_text: |
+     Commissioning of a new [Near-Line Data Store](https://techblog.ceda.ac.uk/2022/03/09/near-line-data-store-intro.html)(NLDS) with essential uplift in tape media capacity. Replacement and expansion of LOTUS capacity plus study of future user requirements.
+   items:
+    - component: Tape storage
+      details: Commissioning of new NLDS tiered storage system<br>Tape media capacity increase.
+      extra: NLDS design & development project underway at CEDA in collaboration with University of Reading<br>23 PB media, 4 drives, 2 data frames, chamber licences & associated costs<br>2 data servers
+    - component: Compute
+      details: Compute nodes to replace & expand LOTUS cluster capacity
+      extra: 92 x compute nodes with 512 GB RAM, dual AMD Epyc processor, 48-core<br>Total 92 x 48 = 4416 cores, mostly for deployment in LOTUS cluster.
+    - component: User requirements study
+      details: Commissioned study to identify potential future user requirements for JASMIN
+      extra: 
+
 
 carousel:
   items:
