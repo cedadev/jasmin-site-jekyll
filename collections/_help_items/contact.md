@@ -23,7 +23,7 @@ JASMIN user support is managed and provided by the CEDA team. There are several 
 <hr>
 
 <div class="media">
-  <img class="mr-3" src="/assets/img/sections/section_content/burst-kUqqaRjJuw0-unsplash.2e16d0ba.fill-900x600.jpg" alt="question mark image" width="250">
+  <img class="mr-3" src="/assets/img/sections/section_content/burst-kUqqaRjJuw0-unsplash.2e16d0ba.fill-900x600.jpg" alt="email image" width="250">
   <div class="media-body">
     <h4 class="mt-0">Email</h4>
     <p>You can email the helpdesk directly: <a href="mailto:support@jasmin.ac.uk">support@jasmin.ac.uk</a></p><p>Please be sure to include detailed information about your issue. The kind of information we need can be found <a href="https://help.jasmin.ac.uk/article/4703-how-to-contact-us-about-jasmin-issues">here</a>.</p>
@@ -33,7 +33,7 @@ JASMIN user support is managed and provided by the CEDA team. There are several 
 <hr>
 
 <div class="media">
-  <img class="mr-3" src="/assets/img/sections/section_content/burst-kUqqaRjJuw0-unsplash.2e16d0ba.fill-900x600.jpg" alt="question mark image" width="250">
+  <img class="mr-3" src="/assets/img/sections/section_content/alexander-andrews-JYGnB9gTCls-unsp.2e16d0ba.fill-900x600.jpg" alt="phone image" width="250">
   <div class="media-body">
     <h4 class="mt-0">Phone <span class="small">(least reliable method)</span></h4>
     <p>Call us on: +44 (0) 1235 44 64 32</p><p>Please note that the most reliable method to contact us is via email, as the phone is not fully supported</p>
