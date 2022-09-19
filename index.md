@@ -1,9 +1,9 @@
 ---
 layout: home
 
-#hero_title: JASMIN
-#hero_tagline: The UK's data analysis facility for environmental science
-hero_background_image: "assets/img/backgrounds/YouTube Banner 2560x1440px-20.jpg"
+hero_title: JASMIN
+hero_tagline: The UK's data analysis facility for environmental science
+hero_background_image: assets/img/backgrounds/DSC7046_UcVFFmM.max-2000x2000.jpg
 
 boxes:
  - title: What is JASMIN?
