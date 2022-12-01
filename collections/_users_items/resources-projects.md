@@ -13,12 +13,12 @@ consortia:
     manager: Grenville Lister, University of Reading
 
   - abbrev: director
-    name: NCAS CMS Director's cross-cutting activities
-    manager: Bryan Lawrence, University of Reading
+    name: Director's cross-cutting activities
+    manager: Adrian Hines, CEDA
 
   - abbrev: ecohydro
     name: Ecology & Hydrology
-    manager: Mike Brown, CEH
+    manager: Iain Walmsley, UKCEH
 
   - abbrev: eoclim
     name: Earth Observation & Climate
@@ -38,7 +38,7 @@ consortia:
     
   - abbrev: npg
     name: National Public Good
-    manager: Bryan Lawrence, University of Reading
+    manager: Adrian Hines, CEDA
 
   - abbrev: oceanss
     name: Ocean & Shelf Seas
