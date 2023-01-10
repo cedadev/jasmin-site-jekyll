@@ -22,7 +22,7 @@ consortia:
 
   - abbrev: eoclim
     name: Earth Observation & Climate
-    manager: Hartmut Boesch, University of Leicester
+    manager: TBD
     
   - abbrev: genomics
     name: Genomics
@@ -62,4 +62,4 @@ The overall allocation of resources to consortia is managed and reviewed periodi
     description="Management of resources for projects"
 %}
 
-The following consortia exist, organised by science community:
+The following consortia exist, organised by science community. Where no Consortium Manager is defined ("TBD"), the role is handled on an interim basis by the JASMIN Team.
