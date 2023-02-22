@@ -209,7 +209,7 @@ OpenDAP4GWS<br>Cluster-as-a-Service testbed<br>Containerised Jupyter Notebook de
       extra: 92 x compute nodes with 512 GB RAM, dual AMD Epyc processor, 48-core<br>Total 92 x 48 = 4416 cores, mostly for deployment in LOTUS cluster.
     - component: User requirements study
       details: Commissioned study to identify potential future user requirements for JASMIN
-      extra: 
+      extra: "<a href='https://zenodo.org/record/7622196'>UKRI JASMINx expansion -  User need analysis report</a>"
 
 
 carousel:
