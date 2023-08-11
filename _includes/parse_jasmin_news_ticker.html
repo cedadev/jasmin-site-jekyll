@@ -1,14 +1,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{{ 'assets/js/FeedEk_page.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ 'assets/js/FeedEk_ticker.js' | relative_url }}" type="text/javascript"></script>
 <script type="text/javascript" src="{{ 'assets/js/purify.min.js' | relative_url }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#divFeed').FeedEk({
             FeedUrl : 'https://www.ceda.ac.uk/blog/tag/jasmin/feeds/rss/',
-            MaxCount : 5,
-            ShowDesc : true,
+            MaxCount : 3,
+            ShowDesc : false,
             ShowPubDate: true,
-            DescCharacterLimit: 500,
+            DescCharacterLimit: 0,
             TitleLinkTarget: '_blank',
             DateFormat : 'dd/MM/yyyy HH:mm',
             DateFormatLang : 'en',
