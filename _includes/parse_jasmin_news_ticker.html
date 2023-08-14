@@ -1,25 +1,56 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{{ 'assets/js/FeedEk_ticker.js' | relative_url }}" type="text/javascript"></script>
-<script type="text/javascript" src="{{ 'assets/js/purify.min.js' | relative_url }}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#divFeed').FeedEk({
-            FeedUrl : 'https://www.ceda.ac.uk/blog/tag/jasmin/feeds/rss/',
-            MaxCount : 3,
-            ShowDesc : false,
-            ShowPubDate: true,
-            DescCharacterLimit: 0,
-            TitleLinkTarget: '_blank',
-            DateFormat : 'dd/MM/yyyy HH:mm',
-            DateFormatLang : 'en',
-            Offset: 5,
-            ShowAuthor: false,
-            //AuthorLabel:"Author:",
-            Success: function (feedItems) { 
-            },
-            Error: function (error) {
-                // TODO report useful error
-             }
-            });
+<script src="{{ 'assets/js/tickerme.min.js' | relative_url }}"></script>
+<script src="{{ 'assets/js/rss-parser.min.js' | relative_url }}"></script>
+<script>
+    // Uses https://github.com/rbren/rss-parser
+
+    function truncate(str, maxContentLength) {
+        return (str.length > maxContentLength) ?
+            str.slice(0, maxContentLength - 1) + '…' : str;
+    }
+
+    let parser = new RSSParser();
+
+    parser.parseURL('https://www.ceda.ac.uk/blog/tag/jasmin/feeds/rss/', function(err, feed) {
+        if (err) throw new Error("Error fetching news feed"); 
+        sorted = feed.items.sort();
+        let displayDiv = document.getElementById("divFeed");
+        let i=0;
+        let maxItems = 5;
+
+        ul = document.createElement('ul');
+        ul.setAttribute("id", "ticker");
+        displayDiv.append(ul);
+
+        sorted.forEach(function(entry) {
+            var li = document.createElement('li');
+
+            title = document.createElement('a');
+            title.setAttribute("target","_blank");
+            title.setAttribute("href", entry.link);
+            title.innerText = entry.title;
+            li.append(title);
+
+            date = document.createElement('span');
+            date.className = "small text-muted";
+            date.innerText = ' '+entry.pubDate;
+            title.after(date);
+
+            //console.log(li);
+            ul.append(li);
+
+            if (i >= (maxItems-1) ) {
+                sorted.length = i; // Behaves like `break`
+            }
+            i++;
+        })
+    })
+
+    $(function(){
+        $('#ticker').tickerme({
+            fade_speed: 900,
+            auto_stop: false,
+            control_rollover: '#FF0000'
+        });
     });
 </script>
