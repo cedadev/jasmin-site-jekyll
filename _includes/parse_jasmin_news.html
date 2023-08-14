@@ -1,25 +1,84 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{{ 'assets/js/FeedEk_page.js' | relative_url }}" type="text/javascript"></script>
-<script type="text/javascript" src="{{ 'assets/js/purify.min.js' | relative_url }}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#divFeed').FeedEk({
-            FeedUrl : 'https://www.ceda.ac.uk/blog/tag/jasmin/feeds/rss/',
-            MaxCount : 5,
-            ShowDesc : true,
-            ShowPubDate: true,
-            DescCharacterLimit: 500,
-            TitleLinkTarget: '_blank',
-            DateFormat : 'dd/MM/yyyy HH:mm',
-            DateFormatLang : 'en',
-            Offset: 5,
-            ShowAuthor: false,
-            //AuthorLabel:"Author:",
-            Success: function (feedItems) { 
-            },
-            Error: function (error) {
-                // TODO report useful error
-             }
-            });
-    });
+<script src="{{ 'assets/js/rss-parser.min.js' | relative_url }}"></script>
+<script>
+    // Uses https://github.com/rbren/rss-parser
+
+    function truncate(str, maxContentLength) {
+        return (str.length > maxContentLength) ?
+            str.slice(0, maxContentLength - 1) + '…' : str;
+    }
+
+    let parser = new RSSParser();
+
+    parser.parseURL('https://www.ceda.ac.uk/blog/tag/jasmin/feeds/rss/', function(err, feed) {
+        if (err) throw new Error("Error fetching news feed");            
+        sorted = feed.items.sort();
+        let displayDiv = document.getElementById("divFeed");
+        let i=0;
+        let maxItems = 5;
+        sorted.forEach(function(entry) {
+            var card = document.createElement('div');
+            card.className ="card mb-3";
+            displayDiv.append(card);
+
+            var cardHeader = document.createElement('div');
+            cardHeader.className = "card-header";
+            card.append(cardHeader);
+
+            var row = document.createElement('div');
+            row.className = "row";
+            cardHeader.append(row);
+            
+            var lcol = document.createElement('div');
+            lcol.className = "col-8 text-left";
+            row.append(lcol);
+
+            var heading = document.createElement('h5');
+            heading.className = "card-title";
+            heading.innerText = entry.title;
+            lcol.append(heading);
+
+            var rcol = document.createElement('div');
+            rcol.className = "col-4 text-right";
+            row.append(rcol);
+
+            var pubDate = document.createElement('h6');
+            pubDate.className = "card-subtitle mb-2 text-muted";
+            pubDate.innerText = entry.pubDate;
+            rcol.append(pubDate);
+
+            var cardBody = document.createElement('div');
+            cardBody.className = "card-body";
+            cardHeader.after(cardBody);
+
+            var tRow = document.createElement('div');
+            tRow.className = "row";
+            cardBody.append(tRow);
+
+            var bodyTextDiv = document.createElement('div');
+            bodyTextDiv.className = "col-8 text-left";
+            tRow.append(bodyTextDiv);
+
+            var bodyContent = document.createElement('p');
+            bodyContent.className = "";
+            bodyTextDiv.append(bodyContent);
+            bodyContent.innerText = truncate( entry.contentSnippet, 400 )
+            
+            var bodyTextRCol = document.createElement('div');
+            bodyTextRCol.className = "col-4 text-right";
+            bodyTextDiv.after(bodyTextRCol);
+
+            var button = document.createElement('a');
+            button.className = "btn btn-success btn-sm";
+            button.innerText = "read more";
+            button.setAttribute("href", entry.link);
+            button.setAttribute("target", "_blank");
+            bodyTextRCol.append(button);
+
+            if (i >= (maxItems-1) ) {
+                sorted.length = i; // Behaves like `break`
+            }
+            i++;
+        })
+    })
 </script>
