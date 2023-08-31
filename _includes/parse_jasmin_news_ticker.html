@@ -11,7 +11,7 @@
 
     let parser = new RSSParser();
 
-    parser.parseURL('https://www.ceda.ac.uk/blog/tag/jasmin/feeds/rss/', function(err, feed) {
+    parser.parseURL('http://localhost:8000/blog/tag/vacancy/feeds/rss/', function(err, feed) {
         if (err) throw new Error("Error fetching news feed"); 
         sorted = feed.items.sort();
         let displayDiv = document.getElementById("divFeed");
