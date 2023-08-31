@@ -43,6 +43,10 @@ boxes:
    url: https://www.ceda.ac.uk/events/jasmin-user-seminar-series/
    order: 7
 ---
+### JASMIN User Conference 2023
+We will be hosting the next JASMIN conference at our host institute on the Harwell Campus in Oxfordshire. It will occur over two half days on the afternoon of Wednesday 1 and the morning of Thursday 2 November 2023.
+
+[Learn more](https://www.ceda.ac.uk/agenda/jasmin-conference-2023/detail/){: class="btn btn-success"}
 
 ### User engagement events managed by CEDA
 Find out about upcoming and recent events relevant to JASMIN organised by the CEDA team, including:
