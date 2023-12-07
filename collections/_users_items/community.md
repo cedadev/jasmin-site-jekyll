@@ -16,6 +16,7 @@ boxes:
     - answer: One-to-one communication via a dedicated helpdesk
     - answer: At various events - workshops, webinars, JASMIN conference
     - answer: Presence at science conferences (usually members of the CEDA team) e.g. Atmospheric Science conference
+    - answer: Discussion fora where staff and users alike can contribute to discussions on topics of interest.
 
  - title: How can users talk to other users?
    answers:
