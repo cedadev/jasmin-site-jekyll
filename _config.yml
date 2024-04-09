@@ -5,6 +5,7 @@ google_tag_manager: true
 
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
 collections:
   staff_members:
