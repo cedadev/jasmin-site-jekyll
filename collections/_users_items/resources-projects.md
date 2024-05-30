@@ -22,7 +22,7 @@ consortia:
 
   - abbrev: eoclim
     name: Earth Observation & Climate
-    manager: TBD
+    manager: Federica Moscato & Alison Waterfall, CEDA
     
   - abbrev: genomics
     name: Genomics
