@@ -10,37 +10,37 @@ page_image:
 boxes:
  - leader: JASMIN Forum 2012
    text: An event early in the history of JASMIN, held at Reading University in 2012
-   url: https://www.ceda.ac.uk/events/jamsin-forum-2012/
+   url: https://www.ceda.ac.uk/events/past/jasmin-forum2012/
    order: 1
 
  - leader: JASMIN Launch Event 2014
    text: An event celebrating the formal launch of JASMIN held in 2014
-   url: https://www.ceda.ac.uk/events/jasmin-launch-event-2014/
+   url: https://www.ceda.ac.uk/events/past/jasmin-launch-event/
    order: 2
 
  - leader: JASMIN User Conference 2016
    text: JASMIN's first user conference held in June 2016
-   url: https://www.ceda.ac.uk/events/jasmin-conference-2016/
+   url: https://www.ceda.ac.uk/events/past/jasmin2016/
    order: 3
 
  - leader: JASMIN User Conference 2017
    text: The second JASMIN User Conference, held in June 2017.
-   url: https://www.ceda.ac.uk/events/jasmin-conference-2017/
+   url: https://www.ceda.ac.uk/events/past/jasmin2017/
    order: 4
 
  - leader: JASMIN Conference 2018
    text: Our third user conference, held in June 2018.
-   url: https://www.ceda.ac.uk/events/jasmin-conference-2018/
+   url: https://www.ceda.ac.uk/events/past/jasmin2018/
    order: 5
 
  - leader: JASMIN Virtual Event 2020
    text: We weren't able to hold an in-person user conference in 2020 so we moved the event online.
-   url: https://www.ceda.ac.uk/events/jasmin2020-virtual-event/
+   url: https://www.ceda.ac.uk/events/past/jasmin-virtual-event2020/
    order: 6
 
  - leader: User Seminar Series 2021
    text: We weren't able to hold an in-person user conference in 2020 so we moved the event online.
-   url: https://www.ceda.ac.uk/events/jasmin-user-seminar-series/
+   url: https://www.ceda.ac.uk/events/past/jasmin-user-seminar-series/
    order: 7
 ---
 ### JASMIN User Conference 2023
