@@ -64,7 +64,6 @@ These services are briefly described below, but for full details of how to acces
                 
                     
                         <td>support@jasmin.ac.uk
-@cedanews (Twitter)
 www.ceda.ac.uk/blog</td>
                     
                 

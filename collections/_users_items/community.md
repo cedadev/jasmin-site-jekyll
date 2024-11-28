@@ -12,7 +12,7 @@ boxes:
  - title: How does the team communicate with users?
    answers:
     - answer: Important announcements are sent via a mailing list (all users are automatically signed up to this when they register). If you don’t think you get these emails, please get in touch.
-    - answer: Information and updates are also shared on the CEDA Twitter and news channel.
+    - answer: Information and updates are also shared on the CEDA news channel.
     - answer: One-to-one communication via a dedicated helpdesk
     - answer: At various events - workshops, webinars, JASMIN conference
     - answer: Presence at science conferences (usually members of the CEDA team) e.g. Atmospheric Science conference
