@@ -43,8 +43,6 @@ boxes:
    url: https://www.ceda.ac.uk/events/past/jasmin-user-seminar-series/
    order: 7
 ---
-### JASMIN User Conference 2025 - Register now!
-We will be hosting the next JASMIN conference at our host institute on the Harwell Campus in Oxfordshire. It will occur over two half days on the afternoon of Wednesday 1 and the Thursday 2 November 2025.
 
 [Learn more](https://www.ceda.ac.uk/events/jasmin-conference-2025/){: class="btn btn-success"}
 
