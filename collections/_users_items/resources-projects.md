@@ -18,7 +18,7 @@ consortia:
 
   - abbrev: ecohydro
     name: Ecology & Hydrology
-    manager: Iain Walmsley, UKCEH
+    manager: Mike Brown, UKCEH
 
   - abbrev: eoclim
     name: Earth Observation & Climate
