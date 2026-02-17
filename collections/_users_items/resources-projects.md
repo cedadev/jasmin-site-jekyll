@@ -32,7 +32,7 @@ consortia:
     name: Geology
     manager: TBD
 
-  - abbrev: uknscp
+  - abbrev: ukncsp
     name: UK National Climate Science Partnership (was JWRCP)
     manager: Bryan Lawrence, University of Reading
     
