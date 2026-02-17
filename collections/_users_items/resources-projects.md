@@ -10,7 +10,7 @@ order: 2
 consortia:
   - abbrev: atmos
     name: Atmospheric Science
-    manager: Grenville Lister, University of Reading
+    manager: David Hassell, University of Reading
 
   - abbrev: director
     name: Director's cross-cutting activities
@@ -32,9 +32,9 @@ consortia:
     name: Geology
     manager: TBD
 
-  - abbrev: jwcrp
-    name: Joint Weather & Climate Research Programme
-    manager: Ag Stephens, CEDA
+  - abbrev: uknscp
+    name: UK National Climate Science Partnership (was JWRCP)
+    manager: Bryan Lawrence, University of Reading
     
   - abbrev: npg
     name: National Public Good
