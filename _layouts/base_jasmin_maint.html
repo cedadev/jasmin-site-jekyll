@@ -70,19 +70,6 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-    <!-- Google CSE Search stuff -->
-    <script async src="https://cse.google.com/cse.js?cx=98d9bba52d1334b96"></script>
-    <script src="https://unpkg.com/mustache@4.1.0"></script>
-    <script src="{{ 'assets/js/result_bootstrap_mustache.js' | relative_url }}"></script>
-    <script>
-        gcs_results_template = "{{ 'assets/html/bootstrap_results.html' | relative_url }}";
-        window.__gcse || (window.__gcse = {});
-        window.__gcse.searchCallbacks = {
-            web: {
-                ready: bootstrapResultsReadyCallback,
-            },
-        };
-    </script>
     <!-- cookielaw -->
     <!-- <script src="{{ 'assets/js/cookielaw.js' | relative_url }}"></script> -->
 
@@ -151,13 +138,6 @@
               {% endfor %}
 
           </ul>
-          <form class="form-inline ml-auto" action="{{ 'search' | relative_url }}" method="GET">
-            <div class="form-group"><label class="sr-only" for="id_s">Search</label><input type="text" name="s" maxlength="255" class="form-control" placeholder="Search" title="" id="id_s"></div>
-            <input type="hidden" name="t" id="id_t">
-            <div class="form-group">
-              <button class="btn btn-outline-secondary ml-2" type="submit">Search</button>
-            </div>
-          </form>
         </div>
       </div>
     </nav>
