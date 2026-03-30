@@ -1,5 +1,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{{ 'assets/js/tickerme.min.js' | relative_url }}"></script>
 <script src="{{ 'assets/js/rss-parser.min.js' | relative_url }}"></script>
 <script>
     // Uses https://github.com/rbren/rss-parser
@@ -45,12 +44,4 @@
             i++;
         })
     })
-
-    $(function(){
-        $('#ticker').tickerme({
-            fade_speed: 900,
-            auto_stop: false,
-            control_rollover: '#FF0000'
-        });
-    });
 </script>
