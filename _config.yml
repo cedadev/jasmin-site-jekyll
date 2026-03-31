@@ -1,7 +1,9 @@
 title: JASMIN Site
 description: JASMIN web site implemented using Jekyll.
 show_excerpts: true
-google_tag_manager: true
+google_analytics:
+  active: true
+  id: "G-JJZZ5F2KN4"
 
 plugins:
   - jekyll-feed
