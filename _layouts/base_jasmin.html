@@ -5,18 +5,6 @@
     <meta charset="UTF-8">
     <title>{{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google analytics snippet taken from original cayman theme. Can be controlled from 
-         config file -->
-    {% if site.google_tag_manager %}
-      <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NDG2XX7');</script>
-        <!-- End Google Tag Manager -->
-    {% endif %}
-
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/4/flatly/bootstrap.css" media="screen">
@@ -68,9 +56,6 @@
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    
-    <!-- cookielaw -->
-    <!-- <script src="{{ 'assets/js/cookielaw.js' | relative_url }}"></script> -->
 
     <!-- local customisations --> 
     <link rel="stylesheet" href="{{ 'assets/css/codered-front.min.css' | relative_url }}">
@@ -85,16 +70,23 @@
 
     {% comment %}{% include parse_jasmin_news.html %}{% endcomment %}
 
+
+    {% if site.google_analytics.active %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.id }}"></script>
+      <script>
+        /* global dataLayer */
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics.id }}');
+      </script>
+    {% endif %}
+
   </head>
 
   <body id="body">
     <div id="root" class="d-flex flex-column sticky-footer-wrapper min-vh-100">
-      {% if site.google_tag_manager %}
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDG2XX7"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-      {% endif %}
 
 
   <!-- navbar --> 
@@ -141,17 +133,6 @@
     </nav>
 
     <main class="flex-fill">
-      <!-- main content container -->
-
-      <!-- <div class="alert alert-info text-center" id="CookielawBanner">
-      This website uses cookies.
-      By continuing to use this website you are agreeing to our use of cookies.&nbsp;
-        <div class="btn-group">
-          <button type="button" class="btn btn-secondary" onclick="javascript:Cookielaw.createCookielawCookie();">OK</button>
-          <button type="button" class="btn btn-secondary" onclick="javascript:window.open('https://accounts.jasmin.ac.uk/account/privacy/')">Find out more</button>
-        </div>
-      </div> -->
-
       <div id="content">
         {{ content }}
       </div>
@@ -215,22 +196,52 @@
     <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/popper.js/dist/umd/popper.min.js"></script>
     <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://artefacts.ceda.ac.uk/themes/orgtheme_jasmin/0.5/_assets/js/custom.js"></script>
-
-    <!-- Cookie consent -->
-    <script src="{{ 'assets/js/jquery.cookie-consent.js' | relative_url }}"></script>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#cookieConsent').cookieConsent({
-          message: 'This website uses cookies. By using this website you consent to our use of these cookies.&nbsp;'
-        });
-      });
-    </script>
-
     </div> <!-- root -->
 
     <!-- JASMIN help beacon --> 
     <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});</script>
     <script type="text/javascript">window.Beacon('init', 'a108cc24-88df-4d59-9e84-17ba328fc105')</script>
+
+    <!-- Civic Cookie Control - Latest Stable Version -->`
+    <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+    <!-- civic cookie control-->
+    <script>
+    const config = {
+      apiKey: '94659ce343c70fcc0e2b702a8aeb52f594aefb67',
+      product: 'PRO_MULTISITE',
+      position: 'left',
+      //ccCookie: 'cookiecontrol-jasmin',
+      subdomains: false,
+
+      statement : {
+        url: 'https://accounts.jasmin.ac.uk/account/privacy/',
+        updated : '07/03/2025' // need DD/MM/YYYY format (inc trailing zeros)
+      },
+
+      necessaryCookies: [],
+
+      optionalCookies: [
+        {
+            name: 'analytics',
+            label: 'Google Analytics',
+            description: 'Analytical cookies help us to improve our website by collecting and reporting information on its usage.',
+            cookies: ['_ga', '_ga*', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'],
+                onAccept: function(){
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted'
+                    });
+                },
+                onRevoke: function(){
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'denied'
+                    });
+                }
+        }
+      ]
+    }
+
+    CookieControl.load( config );
+    </script>
+
   </body>
 </html>
